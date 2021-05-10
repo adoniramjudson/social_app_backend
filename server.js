@@ -10,8 +10,10 @@ connectDB();
 // Init Middleware
 app.use(express.json({ extended: false }));
 
-app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname + "/index.html"));
+app.get("/", (req, res) => {
+  res.status(200).send({
+    message: "Welcome to mern stack backend",
+  });
 });
 
 //Define ROutes
